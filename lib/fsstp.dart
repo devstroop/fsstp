@@ -14,7 +14,7 @@ typedef OnConnecting = void Function();
 typedef OnDisconnected = void Function();
 typedef OnError = Function();
 
-class SstpFlutter {
+class FSSTP {
   Timer? _timer;
   int _downloadSpeed = 0;
   int _uploadSpeed = 0;
@@ -246,7 +246,7 @@ class SstpFlutter {
     return caller;
   }
 
-  static final SstpFlutter _instance = SstpFlutter.internal();
-  factory SstpFlutter() => _instance;
-  SstpFlutter.internal();
+  static final FSSTP _instance = FSSTP.internal();
+  factory FSSTP() => _instance;
+  FSSTP.internal();
 }

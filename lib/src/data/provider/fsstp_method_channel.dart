@@ -101,17 +101,17 @@ class MethodChannelSstpFlutter {
         "sslPort": server.port,
         "userName": server.username,
         "password": server.password,
-        "verifyHostName": server.softEtherConfiguration.verifyHostName,
-        "verifySSLCert": server.softEtherConfiguration.verifySSLCert,
-        "useTrustedCert": server.softEtherConfiguration.useTrustedCert,
-        "sslVersion": server.softEtherConfiguration.sslVersion,
+        "verifyHostName": server.softEtherConfiguration?.verifyHostName,
+        "verifySSLCert": server.softEtherConfiguration?.verifySSLCert,
+        "useTrustedCert": server.softEtherConfiguration?.useTrustedCert,
+        "sslVersion": server.softEtherConfiguration?.sslVersion,
         "showDisconnectOnNotification":
-            server.softEtherConfiguration.showDisconnectOnNotification,
-        "notificationText": server.softEtherConfiguration.notificationText,
-        "enableCHAP": server.sstpConfiguration.enableCHAP,
-        "enablePAP": server.sstpConfiguration.enablePAP,
-        "enableTLS": server.sstpConfiguration.enableTLS,
-        "enableMSCHAP2": server.sstpConfiguration.enableMSCHAP2,
+            server.softEtherConfiguration?.showDisconnectOnNotification,
+        "notificationText": server.softEtherConfiguration?.notificationText,
+        "enableCHAP": server.sstpConfiguration?.enableCHAP,
+        "enablePAP": server.sstpConfiguration?.enablePAP,
+        "enableTLS": server.sstpConfiguration?.enableTLS,
+        "enableMSCHAP2": server.sstpConfiguration?.enableMSCHAP2,
       });
       debugPrint(res.toString());
     } catch (e) {

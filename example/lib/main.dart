@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final sstpFlutterPlugin = SstpFlutter();
+  final sstpFlutterPlugin = FSSTP();
   var connectionStatus = "disconnected";
   var certDir = "none";
   var downSpeed = 0;
