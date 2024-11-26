@@ -1,6 +1,6 @@
-# sstp_flutter_example
+# fsstp_example
 
-Demonstrates how to use the sstp_flutter plugin.
+Demonstrates how to use the fsstp plugin.
 
 ## Getting Started
 

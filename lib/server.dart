@@ -1,5 +1,5 @@
-import 'package:sstp_flutter/softether_configuration.dart';
-import 'package:sstp_flutter/sstp_configuration.dart';
+import 'package:fsstp/softether_configuration.dart';
+import 'package:fsstp/sstp_configuration.dart';
 
 class SSTPServer {
   final String host;

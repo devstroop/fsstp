@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sstp_flutter/app_info.dart';
-import 'package:sstp_flutter/proxy.dart';
-import 'package:sstp_flutter/server.dart';
+import 'package:fsstp/app_info.dart';
+import 'package:fsstp/proxy.dart';
+import 'package:fsstp/server.dart';
 
 class MethodChannelSstpFlutter {
-  final methodChannelCaller = const MethodChannel('sstp_flutter');
+  final methodChannelCaller = const MethodChannel('fsstp');
 
   Future<String?> getPlatformVersion() async {
     final version =

@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@import sstp_flutter;
+@import fsstp;
 
 // This demonstrates a simple unit test of the Objective-C portion of this plugin's implementation.
 //

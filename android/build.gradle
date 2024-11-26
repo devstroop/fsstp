@@ -1,4 +1,4 @@
-group 'com.example.sstp_flutter'
+group 'com.devstroop.fsstp'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -27,7 +27,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdk 33
     if (project.android.hasProperty("namespace")) {
-        namespace 'com.example.sstp_flutter'
+        namespace 'com.devstroop.fsstp'
     }
 
 

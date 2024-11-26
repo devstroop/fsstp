@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sstp_flutter/server.dart';
-import 'package:sstp_flutter/softether_configuration.dart';
-import 'package:sstp_flutter/ssl_versions.dart';
-import 'package:sstp_flutter/sstp_configuration.dart';
-import 'package:sstp_flutter/sstp_flutter.dart';
-import 'package:sstp_flutter/traffic.dart';
+import 'package:fsstp/server.dart';
+import 'package:fsstp/softether_configuration.dart';
+import 'package:fsstp/ssl_versions.dart';
+import 'package:fsstp/sstp_configuration.dart';
+import 'package:fsstp/fsstp.dart';
+import 'package:fsstp/traffic.dart';
 
 void main() {
   runApp(const MyApp());

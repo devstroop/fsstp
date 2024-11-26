@@ -1,4 +1,4 @@
-package com.example.sstp_flutter
+package com.devstroop.fsstp
 
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel

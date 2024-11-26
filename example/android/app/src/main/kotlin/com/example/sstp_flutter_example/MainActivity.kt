@@ -1,4 +1,4 @@
-package com.example.sstp_flutter_example
+package com.devstroop.fsstp_example
 
 import io.flutter.embedding.android.FlutterActivity
 

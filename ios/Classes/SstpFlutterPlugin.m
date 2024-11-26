@@ -33,7 +33,7 @@
                                        binaryMessenger:[registrar messenger]];
     
     FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"sstp_flutter"
+      methodChannelWithName:@"fsstp"
             binaryMessenger:[registrar messenger]];
   
   [registrar addMethodCallDelegate:instance channel:channel];

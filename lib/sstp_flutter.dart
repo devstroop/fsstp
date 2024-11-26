@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:sstp_flutter/src/core/Utils/utils.dart';
-import 'package:sstp_flutter/traffic.dart';
-import 'package:sstp_flutter/app_info.dart';
-import 'package:sstp_flutter/proxy.dart';
-import 'package:sstp_flutter/server.dart';
-import 'package:sstp_flutter/src/data/provider/sstp_flutter_method_channel.dart';
+import 'package:fsstp/src/core/Utils/utils.dart';
+import 'package:fsstp/traffic.dart';
+import 'package:fsstp/app_info.dart';
+import 'package:fsstp/proxy.dart';
+import 'package:fsstp/server.dart';
+import 'package:fsstp/src/data/provider/fsstp_method_channel.dart';
 
 typedef OnConnected = Function(ConnectionTraffic traffic, Duration duration);
 typedef OnConnecting = void Function();
@@ -132,7 +132,7 @@ class SstpFlutter {
   ///
   /// These packages are allowed to get tunneled , except that they're not getting tunneled
   ///
-  /// fixed bug reported in : [https://github.com/NavidShokoufeh/sstp_flutter/issues/8]
+  /// fixed bug reported in : [https://github.com/NavidShokoufeh/fsstp/issues/8]
   ///
   /// WARNING : it's available only on Android
   Future<List<String>> getAllowedApps() async {

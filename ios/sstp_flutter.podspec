@@ -1,15 +1,15 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint sstp_flutter.podspec` to validate before publishing.
+# Run `pod lib lint fsstp.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'sstp_flutter'
+  s.name             = 'fsstp'
   s.version          = '1.0.0'
   s.summary          = 'SSTP client for flutter on ios platform'
   s.description      = <<-DESC
   SSTP client for flutter on ios platform
                        DESC
-  s.homepage         = 'https://github.com/NavidShokoufeh/sstp_flutter'
+  s.homepage         = 'https://github.com/NavidShokoufeh/fsstp'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Navid Shokoufeh' => 'navidshokoufeh.dev@gmail.com' }
   s.source           = { :path => '.' }

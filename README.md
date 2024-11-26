@@ -15,11 +15,11 @@ SstpFlutter is a Flutter plugin for SSTP VPN connections. It provides a convenie
 
 ## Getting Started
 
-To use this plugin, add `sstp_flutter` as a dependency in your `pubspec.yaml` file.
+To use this plugin, add `fsstp` as a dependency in your `pubspec.yaml` file.
 
 ```yaml
 dependencies:
-  sstp_flutter: ^version
+  fsstp: ^version
 ```
 
 Then, run `flutter pub get` to install the dependency.
@@ -29,13 +29,13 @@ Then, run `flutter pub get` to install the dependency.
 ### <b>1. Add Capabillity</b>
 Add <b>Network Extensions</b> capabillity on Runner's Target and enable <b>Packet Tunnel</b>
 
-<img src ='https://github.com/NavidShokoufeh/sstp_flutter/blob/main/example/sc/1.png?raw=true'>
+<img src ='https://github.com/NavidShokoufeh/fsstp/blob/main/example/sc/1.png?raw=true'>
 
 ### <b>2. Add New Target</b>
 
 Click + button on bottom left, Choose <b>NETWORK EXTENSION</b>. And set <b>Language</b> and <b>Provider  Type</b> to <b>Objective-C</b> and <b>Packet Tunnel</b> as image below.
 
-<img src ='https://github.com/NavidShokoufeh/sstp_flutter/blob/main/example/sc/2.png?raw=true'>
+<img src ='https://github.com/NavidShokoufeh/fsstp/blob/main/example/sc/2.png?raw=true'>
 
 ### <b>3. Add Capabillity to sstp_extension</b>
 
@@ -46,21 +46,21 @@ Repeat the step 1 for new target you created on previous step (sstp_extension)
 Select sstp_extension and add the following lines to your <b>Build Setting</b> > <b>Framework Search Path</b>:
 
 ```
-$(SRCROOT)/.symlinks/plugins/sstp_flutter/ios/ext
+$(SRCROOT)/.symlinks/plugins/fsstp/ios/ext
 ```
 ```
-$(SRCROOT)/.symlinks/plugins/sstp_flutter/ios/openconnect
+$(SRCROOT)/.symlinks/plugins/fsstp/ios/openconnect
 ```
 
 ### <b>5. Copy Paste</b>
 
-Open sstp_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/NavidShokoufeh/sstp_flutter/refs/heads/main/example/ios/sstp_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
+Open sstp_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/NavidShokoufeh/fsstp/refs/heads/main/example/ios/sstp_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
 
 
 ## Example
 
 ```dart
-import 'package:sstp_flutter/sstp_flutter.dart';
+import 'package:fsstp/fsstp.dart';
 
 void main() async {
   SstpFlutter sstpFlutter = SstpFlutter();
@@ -139,7 +139,7 @@ SSTPServer server = SSTPServer(
   print('Allowed Apps: $allowedApps');
 
   // Add apps to allowed apps (Android only)
-  await sstpFlutter.addToAllowedApps(packages: ['com.example.app']);
+  await sstpFlutter.addToAllowedApps(packages: ['com.devstroop.app']);
 
   // Enable DNS (Android only)
   await sstpFlutter.enableDns(DNS: '8.8.8.8');
@@ -163,7 +163,7 @@ Please note that the plugin methods may throw exceptions (`PlatformException`). 
 
 ## Contributions and Issues
 
-Feel free to contribute to this project by submitting pull requests or reporting issues on the [GitHub repository](https://github.com/NavidShokoufeh/sstp_flutter).
+Feel free to contribute to this project by submitting pull requests or reporting issues on the [GitHub repository](https://github.com/NavidShokoufeh/fsstp).
 
 This addition emphasizes that the purpose of the plugin is to provide a secure means for web surfing using SSTP VPN connections. Adjustments can be made based on your specific requirements.
 

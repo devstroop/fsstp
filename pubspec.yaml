@@ -1,7 +1,7 @@
-name: sstp_flutter
-description: SstpFlutter is a Flutter plugin for SSTP VPN connections. It provides a convenient way to manage SSTP VPN connections, monitor connection status, and configure various settings.
+name: fsstp
+description: FSSTP is a Flutter plugin for SSTP/SoftEther VPN connections. It provides a convenient way to manage SSTP/SoftEther VPN connections, monitor connection status, and configure various settings.
 version: 1.2.0+hotfix.2
-homepage: https://github.com/NavidShokoufeh/sstp_flutter
+homepage: https://github.com/devstroop/fsstp
 
 platforms:
   android:
@@ -22,12 +22,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  change_app_package_name: ^1.4.0
 
 flutter:
   plugin:
     platforms:
       android:
-        package: com.example.sstp_flutter
+        package: com.devstroop.fsstp
         pluginClass: SstpFlutterPlugin
       ios:
         pluginClass: SstpFlutterPlugin

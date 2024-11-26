@@ -1,4 +1,4 @@
-import 'package:sstp_flutter/ssl_versions.dart';
+import 'package:fsstp/ssl_versions.dart';
 
 class SoftEtherConfiguration {
   final bool verifyHostName;
