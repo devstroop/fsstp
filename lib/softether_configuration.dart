@@ -1,13 +1,13 @@
 import 'package:sstp_flutter/ssl_versions.dart';
 
-class SSTPAndroidConfiguration {
+class SoftEtherConfiguration {
   final bool verifyHostName;
   final bool verifySSLCert;
   final bool useTrustedCert;
   final bool showDisconnectOnNotification;
   final String notificationText;
   final String sslVersion;
-  SSTPAndroidConfiguration({
+  SoftEtherConfiguration({
     this.verifyHostName = false,
     this.verifySSLCert = false,
     this.useTrustedCert = false,

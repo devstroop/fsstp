@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sstp_flutter/android_configuration_sstp.dart';
-import 'package:sstp_flutter/ios_configuration_sstp.dart';
 import 'package:sstp_flutter/server.dart';
+import 'package:sstp_flutter/softether_configuration.dart';
 import 'package:sstp_flutter/ssl_versions.dart';
+import 'package:sstp_flutter/sstp_configuration.dart';
 import 'package:sstp_flutter/sstp_flutter.dart';
 import 'package:sstp_flutter/traffic.dart';
 
@@ -90,7 +90,7 @@ class _MyAppState extends State<MyApp> {
                           port: 443,
                           username: userNameController.text,
                           password: passController.text,
-                          androidConfiguration: SSTPAndroidConfiguration(
+                          softEtherConfiguration: SoftEtherConfiguration(
                             verifyHostName: false,
                             useTrustedCert: false,
                             verifySSLCert: false,
@@ -98,7 +98,7 @@ class _MyAppState extends State<MyApp> {
                             showDisconnectOnNotification: true,
                             notificationText: "Notification Text Holder",
                           ),
-                          iosConfiguration: SSTPIOSConfiguration(
+                          sstpConfiguration: SSTPConfiguration(
                             enableMSCHAP2: true,
                             enableCHAP: false,
                             enablePAP: false,

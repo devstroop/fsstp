@@ -101,17 +101,17 @@ class MethodChannelSstpFlutter {
         "sslPort": server.port,
         "userName": server.username,
         "password": server.password,
-        "verifyHostName": server.androidConfiguration.verifyHostName,
-        "verifySSLCert": server.androidConfiguration.verifySSLCert,
-        "useTrustedCert": server.androidConfiguration.useTrustedCert,
-        "sslVersion": server.androidConfiguration.sslVersion,
+        "verifyHostName": server.softEtherConfiguration.verifyHostName,
+        "verifySSLCert": server.softEtherConfiguration.verifySSLCert,
+        "useTrustedCert": server.softEtherConfiguration.useTrustedCert,
+        "sslVersion": server.softEtherConfiguration.sslVersion,
         "showDisconnectOnNotification":
-            server.androidConfiguration.showDisconnectOnNotification,
-        "notificationText": server.androidConfiguration.notificationText,
-        "enableCHAP": server.iosConfiguration.enableCHAP,
-        "enablePAP": server.iosConfiguration.enablePAP,
-        "enableTLS": server.iosConfiguration.enableTLS,
-        "enableMSCHAP2": server.iosConfiguration.enableMSCHAP2,
+            server.softEtherConfiguration.showDisconnectOnNotification,
+        "notificationText": server.softEtherConfiguration.notificationText,
+        "enableCHAP": server.sstpConfiguration.enableCHAP,
+        "enablePAP": server.sstpConfiguration.enablePAP,
+        "enableTLS": server.sstpConfiguration.enableTLS,
+        "enableMSCHAP2": server.sstpConfiguration.enableMSCHAP2,
       });
       debugPrint(res.toString());
     } catch (e) {
