@@ -29,7 +29,7 @@ flutter:
     platforms:
       android:
         package: com.devstroop.fsstp
-        pluginClass: SstpFlutterPlugin
+        pluginClass: FSSTPPlugin
       ios:
-        pluginClass: SstpFlutterPlugin
+        pluginClass: FSSTPPlugin
 

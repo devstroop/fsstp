@@ -41,8 +41,7 @@ var manuallyDisconnected : Boolean = false
 var errorConnection : Boolean = false
 var assignedIp = ""
 
-/** SstpFlutterPlugin by Navid Shokoufeh*/
-class SstpFlutterPlugin: FlutterPlugin, MethodCallHandler , ActivityAware, FlutterFragmentActivity() {
+class FSSTPPlugin: FlutterPlugin, MethodCallHandler , ActivityAware, FlutterFragmentActivity() {
   var activityResultListener: PluginRegistry.ActivityResultListener? = null
   private lateinit var activityBinding: ActivityPluginBinding
   private lateinit var channel : MethodChannel

@@ -1,11 +1,11 @@
 //
-//  SstpFlutterPlugin.m
+//  FSSTPPlugin.m
 //
 //  Created by NavidShokoufeh on 1403-08-01.
 //
 
 
-#import "SstpFlutterPlugin.h"
+#import "FSSTPPlugin.h"
 #import <ExtParser/ExtParser.h>
 #import "CheckConnectData.h"
 #import "NodeModel.h"
@@ -14,20 +14,20 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 
-@interface SstpFlutterPlugin ()
+@interface FSSTPPlugin ()
 
 @property (nonatomic, assign) BOOL isObserverAdded;
 @property (nonatomic,strong) NodeModel * modal;
 
 @end
 
-@implementation SstpFlutterPlugin{
+@implementation FSSTPPlugin{
     FlutterMethodChannel *_iOSToFlutterChannel;
     YDVPNStatus connectionStatus;
 }
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-    SstpFlutterPlugin* instance = [[SstpFlutterPlugin alloc] init];
+    FSSTPPlugin* instance = [[FSSTPPlugin alloc] init];
     instance->_iOSToFlutterChannel = [FlutterMethodChannel
                                        methodChannelWithName:@"responseReceiver"
                                        binaryMessenger:[registrar messenger]];

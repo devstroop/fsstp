@@ -20,7 +20,7 @@ class FSSTP {
   int _uploadSpeed = 0;
   int _totalDownload = 0;
   int _totalUpload = 0;
-  MethodChannelSstpFlutter channelHandler = MethodChannelSstpFlutter();
+  MethodChannelFSSTP channelHandler = MethodChannelFSSTP();
   OnConnected? onConnectedResult;
   MethodChannel channel = const MethodChannel("responseReceiver");
 

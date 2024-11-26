@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final sstpFlutterPlugin = FSSTP();
+  final fsstpPlugin = FSSTP();
   var connectionStatus = "disconnected";
   var certDir = "none";
   var downSpeed = 0;
@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   init() async {
-    connectionStatus = await sstpFlutterPlugin.checkLastConnectionStatus();
+    connectionStatus = await fsstpPlugin.checkLastConnectionStatus();
     setState(() {});
   }
 
@@ -107,21 +107,21 @@ class _MyAppState extends State<MyApp> {
                         );
 
                         try {
-                          await sstpFlutterPlugin.takePermission();
-                          await sstpFlutterPlugin
+                          await fsstpPlugin.takePermission();
+                          await fsstpPlugin
                               .takePermission()
                               .then((value) async {
-                            await sstpFlutterPlugin
+                            await fsstpPlugin
                                 .saveServerData(server: server)
                                 .then((value) async {
-                              await sstpFlutterPlugin.connectVpn();
+                              await fsstpPlugin.connectVpn();
                             });
                           });
                         } catch (e) {
                           debugPrint(e.toString());
                         }
 
-                        sstpFlutterPlugin.onResult(
+                        fsstpPlugin.onResult(
                             onConnectedResult:
                                 (ConnectionTraffic traffic, Duration duration) {
                               setState(() {
@@ -150,14 +150,14 @@ class _MyAppState extends State<MyApp> {
                       child: const Text("Connect")),
                   ElevatedButton(
                       onPressed: () async {
-                        await sstpFlutterPlugin.disconnect();
+                        await fsstpPlugin.disconnect();
                       },
                       child: const Text("Disconnect"))
                 ],
               ),
               ElevatedButton(
                   onPressed: () async {
-                    certDir = await sstpFlutterPlugin.addCertificate();
+                    certDir = await fsstpPlugin.addCertificate();
                     setState(() {});
                   },
                   child: const Text("Certificate"))

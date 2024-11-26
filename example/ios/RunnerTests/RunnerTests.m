@@ -15,7 +15,7 @@
 @implementation RunnerTests
 
 - (void)testExample {
-  SstpFlutterPlugin *plugin = [[SstpFlutterPlugin alloc] init];
+  FSSTPPlugin *plugin = [[FSSTPPlugin alloc] init];
 
   FlutterMethodCall *call = [FlutterMethodCall methodCallWithMethodName:@"getPlatformVersion"
                                                               arguments:nil];

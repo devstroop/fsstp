@@ -63,11 +63,11 @@ Open sstp_extension > PacketTunnelProvider.m and copy paste this script <a href=
 import 'package:fsstp/fsstp.dart';
 
 void main() async {
-  SstpFlutter sstpFlutter = SstpFlutter();
+  FSSTP fsstp = FSSTP();
   var cert_dir = "";
 
   // Take VPN permission
-  await sstpFlutter.takePermission();
+  await fsstp.takePermission();
   
   // Create an SSTP server object
 VPNServer server = VPNServer(
@@ -92,16 +92,16 @@ VPNServer server = VPNServer(
 );
   
   // Save created SSTP server
-  await sstpFlutter.saveServerData(server: server);
+  await fsstp.saveServerData(server: server);
 
   // Opens files and then returns selected directory path (Android only)
-  certDir = await sstpFlutterPlugin.addCertificate();
+  certDir = await fsstpPlugin.addCertificate();
 
   // Connect to SSTP VPN
-  await sstpFlutter.connectVpn();
+  await fsstp.connectVpn();
 
   // Monitor connection status
-  sstpFlutterPlugin.onResult(
+  fsstpPlugin.onResult(
       onConnectedResult: (ConnectionTraffic traffic, Duration duration) {
         setState(() {
           connectionTimer = duration;
@@ -127,33 +127,33 @@ VPNServer server = VPNServer(
       onError: () {});
 
   // Disconnect from  VPN
-  await sstpFlutter.disconnect();
+  await fsstp.disconnect();
 
   // Get installed apps (Android only)
-  List<InstalledAppInfo> installedApps = await sstpFlutter.getInstalledApps();
+  List<InstalledAppInfo> installedApps = await fsstp.getInstalledApps();
   print('Installed Apps: $installedApps');
 
   // Get allowed apps (Android only)
-  List<String> allowedApps = await sstpFlutter.getAllowedApps();
+  List<String> allowedApps = await fsstp.getAllowedApps();
   print('Allowed Apps: $allowedApps');
 
   // Add apps to allowed apps (Android only)
-  await sstpFlutter.addToAllowedApps(packages: ['com.example.app']);
+  await fsstp.addToAllowedApps(packages: ['com.example.app']);
 
   // Enable DNS (Android only)
-  await sstpFlutter.enableDns(DNS: '8.8.8.8');
+  await fsstp.enableDns(DNS: '8.8.8.8');
 
   // Disable DNS (Android only)
-  await sstpFlutter.disableDNS();
+  await fsstp.disableDNS();
 
   // Enable proxy (Android only)
-  await sstpFlutter.enableProxy(proxy: SSTPProxy(host: 'proxy.example.com', port: 8080));
+  await fsstp.enableProxy(proxy: SSTPProxy(host: 'proxy.example.com', port: 8080));
 
   // Disable proxy (Android only)
-  await sstpFlutter.disableProxy();
+  await fsstp.disableProxy();
 
   // Check last connection status
-  UtilKeys status = await sstpFlutter.checkLastConnectionStatus();
+  UtilKeys status = await fsstp.checkLastConnectionStatus();
   print('Last Connection Status: $status');
 }
 ```

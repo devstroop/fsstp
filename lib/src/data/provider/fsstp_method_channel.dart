@@ -5,7 +5,7 @@ import 'package:fsstp/app_info.dart';
 import 'package:fsstp/proxy.dart';
 import 'package:fsstp/vpn_server.dart';
 
-class MethodChannelSstpFlutter {
+class MethodChannelFSSTP {
   final methodChannelCaller = const MethodChannel('fsstp');
 
   Future<String?> getPlatformVersion() async {
@@ -131,8 +131,8 @@ class MethodChannelSstpFlutter {
     return caller;
   }
 
-  static final MethodChannelSstpFlutter _instance =
-      MethodChannelSstpFlutter.internal();
-  factory MethodChannelSstpFlutter() => _instance;
-  MethodChannelSstpFlutter.internal();
+  static final MethodChannelFSSTP _instance =
+      MethodChannelFSSTP.internal();
+  factory MethodChannelFSSTP() => _instance;
+  MethodChannelFSSTP.internal();
 }
