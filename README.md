@@ -1,10 +1,10 @@
-# SstpFlutter
+# FSSTP
 
-SstpFlutter is a Flutter plugin for SSTP VPN connections. It provides a convenient way to manage SSTP VPN connections, monitor connection status, and configure various settings.
+FSSTP is a Flutter plugin for SSTP/SoftEther VPN connections. It provides a convenient way to manage SSTP/SoftEther VPN connections, monitor connection status, and configure various settings.
 
 ## Features
 
-- Connect to SSTP VPN server
+- Connect to SSTP/SoftEther VPN server
 - Monitor connection status and duration
 - Retrieve download and upload speed
 - Enable and disable DNS
@@ -29,13 +29,13 @@ Then, run `flutter pub get` to install the dependency.
 ### <b>1. Add Capabillity</b>
 Add <b>Network Extensions</b> capabillity on Runner's Target and enable <b>Packet Tunnel</b>
 
-<img src ='https://github.com/NavidShokoufeh/fsstp/blob/main/example/sc/1.png?raw=true'>
+<img src ='https://github.com/devstroop/fsstp/blob/main/example/sc/1.png?raw=true'>
 
 ### <b>2. Add New Target</b>
 
 Click + button on bottom left, Choose <b>NETWORK EXTENSION</b>. And set <b>Language</b> and <b>Provider  Type</b> to <b>Objective-C</b> and <b>Packet Tunnel</b> as image below.
 
-<img src ='https://github.com/NavidShokoufeh/fsstp/blob/main/example/sc/2.png?raw=true'>
+<img src ='https://github.com/devstroop/fsstp/blob/main/example/sc/2.png?raw=true'>
 
 ### <b>3. Add Capabillity to sstp_extension</b>
 
@@ -54,7 +54,7 @@ $(SRCROOT)/.symlinks/plugins/fsstp/ios/openconnect
 
 ### <b>5. Copy Paste</b>
 
-Open sstp_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/NavidShokoufeh/fsstp/refs/heads/main/example/ios/sstp_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
+Open sstp_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/devstroop/fsstp/refs/heads/main/example/ios/sstp_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
 
 
 ## Example
@@ -70,26 +70,26 @@ void main() async {
   await sstpFlutter.takePermission();
   
   // Create an SSTP server object
-SSTPServer server = SSTPServer(
+VPNServer server = VPNServer(
    host: hostNameController.text,
    port: int.parse(sslPortController.text),
    username: userNameController.text,
    password: passController.text,
-   androidConfiguration: SSTPAndroidConfiguration(
-   verifyHostName: false,
-   useTrustedCert: false,
-   verifySSLCert: false,
-   sslVersion: SSLVersions.TLSv1_1,
-   showDisconnectOnNotification: true,
-   notificationText: "Notification Text Holder",
-    ),
-   iosConfiguration: SSTPIOSConfiguration(
-   enableMSCHAP2: true,
-   enableCHAP: false,
-   enablePAP: false,
-   enableTLS: false,
-    ),
-   );
+   softEtherConfiguration: SoftEtherConfiguration(
+       verifyHostName: false,
+       useTrustedCert: false,
+       verifySSLCert: false,
+       sslVersion: SSLVersions.TLSv1_1,
+       showDisconnectOnNotification: true,
+       notificationText: "Connected",
+   ),
+   sstpConfiguration: SSTPConfiguration(
+       enableMSCHAP2: true,
+       enableCHAP: false,
+       enablePAP: false,
+       enableTLS: false,
+   ),
+);
   
   // Save created SSTP server
   await sstpFlutter.saveServerData(server: server);
@@ -102,32 +102,31 @@ SSTPServer server = SSTPServer(
 
   // Monitor connection status
   sstpFlutterPlugin.onResult(
-   onConnectedResult: (ConnectionTraffic traffic, Duration duration) {
-    setState(() {
-      connectionTimer = duration;
-      connectionStatus = "connected";
-      downSpeed = traffic.downloadTraffic ?? 0;
-      upSpeed = traffic.uploadTraffic ?? 0;
-      });
-    },
-   onConnectingResult: () {
-    debugPrint("onConnectingResult");
-    setState(() {å
-     connectionStatus = "connecting";
-     });
-    },
-   onDisconnectedResult: () {
-    debugPrint("onDisconnectedResult");
-    setState(() {
-     connectionStatus = "disconnected";
-     downSpeed = 0;
-     upSpeed = 0;
-     });
-    },
-   onError: () {});
+      onConnectedResult: (ConnectionTraffic traffic, Duration duration) {
+        setState(() {
+          connectionTimer = duration;
+          connectionStatus = "connected";
+          downSpeed = traffic.downloadTraffic ?? 0;
+          upSpeed = traffic.uploadTraffic ?? 0;
+        });
+      },
+      onConnectingResult: () {
+        debugPrint("onConnectingResult");
+        setState(() {
+          connectionStatus = "connecting";
+        });
+      },
+      onDisconnectedResult: () {
+        debugPrint("onDisconnectedResult");
+        setState(() {
+          connectionStatus = "disconnected";
+          downSpeed = 0;
+          upSpeed = 0;
+        });
+      },
+      onError: () {});
 
-
-  // Disconnect from SSTP VPN
+  // Disconnect from  VPN
   await sstpFlutter.disconnect();
 
   // Get installed apps (Android only)
@@ -139,7 +138,7 @@ SSTPServer server = SSTPServer(
   print('Allowed Apps: $allowedApps');
 
   // Add apps to allowed apps (Android only)
-  await sstpFlutter.addToAllowedApps(packages: ['com.devstroop.app']);
+  await sstpFlutter.addToAllowedApps(packages: ['com.example.app']);
 
   // Enable DNS (Android only)
   await sstpFlutter.enableDns(DNS: '8.8.8.8');
@@ -163,19 +162,7 @@ Please note that the plugin methods may throw exceptions (`PlatformException`). 
 
 ## Contributions and Issues
 
-Feel free to contribute to this project by submitting pull requests or reporting issues on the [GitHub repository](https://github.com/NavidShokoufeh/fsstp).
+Feel free to contribute to this project by submitting pull requests or reporting issues on the [GitHub repository](https://github.com/devstroop/fsstp).
 
-This addition emphasizes that the purpose of the plugin is to provide a secure means for web surfing using SSTP VPN connections. Adjustments can be made based on your specific requirements.
+This addition emphasizes that the purpose of the plugin is to provide a secure means for web surfing using SSTP/SoftEther VPN connections. Adjustments can be made based on your specific requirements.
 
-## Support this Project
-
-If you find this project helpful, consider supporting it by making a donation. Major of Your contribution will spend on charity every month.
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/navidshokoufeh)
-
-[!["زرین پال"](https://cdn.zarinpal.com/badges/trustLogo/1.png)](https://zarinp.al/navid_shokoufeh)
-
-- **Bitcoin (BTC):** `bc1qgwfqm5e3fhyw879ycy23zljcxl2pvs575c3j7w`
-- **USDT (TRC20):** `TJc5v4ktoFaG3WamjY5rvSZy7v2F6tFuuE` 
-
-Thank you for your support! 🚀
