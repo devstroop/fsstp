@@ -1,6 +1,6 @@
 name: fsstp
 description: FSSTP is a Flutter plugin for SSTP/SoftEther VPN connections. It provides a convenient way to manage SSTP/SoftEther VPN connections, monitor connection status, and configure various settings.
-version: 1.2.0+hotfix.2
+version: 1.0.0
 homepage: https://github.com/devstroop/fsstp
 
 platforms:

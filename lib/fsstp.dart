@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:fsstp/src/core/Utils/utils.dart';
+import 'package:fsstp/src/data/provider/fsstp_method_channel.dart';
 import 'package:fsstp/traffic.dart';
 import 'package:fsstp/app_info.dart';
 import 'package:fsstp/proxy.dart';
-import 'package:fsstp/server.dart';
-import 'package:fsstp/src/data/provider/fsstp_method_channel.dart';
+import 'package:fsstp/vpn_server.dart';
 
 typedef OnConnected = Function(ConnectionTraffic traffic, Duration duration);
 typedef OnConnecting = void Function();
@@ -198,8 +198,8 @@ class SstpFlutter {
     }
   }
 
-  /// Saves provided [SSTPServer] configuration.
-  Future saveServerData({required SSTPServer server}) async {
+  /// Saves provided [VPNServer] configuration.
+  Future saveServerData({required VPNServer server}) async {
     try {
       await channelHandler.saveServerData(server: server);
     } catch (e) {

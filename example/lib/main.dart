@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fsstp/server.dart';
+import 'package:fsstp/vpn_server.dart';
 import 'package:fsstp/softether_configuration.dart';
 import 'package:fsstp/ssl_versions.dart';
 import 'package:fsstp/sstp_configuration.dart';
@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   ElevatedButton(
                       onPressed: () async {
-                        SSTPServer server = SSTPServer(
+                        VPNServer server = VPNServer(
                           host: hostNameController.text,
                           port: 443,
                           username: userNameController.text,

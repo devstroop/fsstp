@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fsstp/app_info.dart';
 import 'package:fsstp/proxy.dart';
-import 'package:fsstp/server.dart';
+import 'package:fsstp/vpn_server.dart';
 
 class MethodChannelSstpFlutter {
   final methodChannelCaller = const MethodChannel('fsstp');
@@ -94,7 +94,7 @@ class MethodChannelSstpFlutter {
     await methodChannelCaller.invokeMethod("disableProxy");
   }
 
-  Future saveServerData({required SSTPServer server}) async {
+  Future saveServerData({required VPNServer server}) async {
     try {
       var res = await methodChannelCaller.invokeMethod("saveServer", {
         "hostName": server.host,

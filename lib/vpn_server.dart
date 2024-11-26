@@ -1,7 +1,7 @@
 import 'package:fsstp/softether_configuration.dart';
 import 'package:fsstp/sstp_configuration.dart';
 
-class SSTPServer {
+class VPNServer {
   final String host;
   final int port;
   final String username;
@@ -9,7 +9,7 @@ class SSTPServer {
   final SoftEtherConfiguration softEtherConfiguration;
   final SSTPConfiguration sstpConfiguration;
 
-  SSTPServer(
+  VPNServer(
       {required this.host,
       this.port = 443,
       required this.username,
