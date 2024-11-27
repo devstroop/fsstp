@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
   SSTP client for flutter on ios platform
                        DESC
-  s.homepage         = 'https://github.com/NavidShokoufeh/fsstp'
+  s.homepage         = 'https://github.com/devstroop/fsstp'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Navid Shokoufeh' => 'navidshokoufeh.dev@gmail.com' }
+  s.author           = { 'Akash Shah' => 'akash@devstroop.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*.{m}'
   s.public_header_files = 'Classes/**/*.h'
