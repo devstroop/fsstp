@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.version          = '1.0.0'
   s.summary          = 'SSTP client for flutter on ios platform'
   s.description      = <<-DESC
-  SSTP client for flutter on ios platform
+  SSTP/SoftEther client for flutter on ios platform
                        DESC
   s.homepage         = 'https://github.com/devstroop/fsstp'
   s.license          = { :file => '../LICENSE' }
