@@ -1,5 +1,5 @@
 //
-//  SSSSTPClient.h
+//  SSTPClient.h
 //  xsocks
 //
 //  Created by badwin on 2023/12/29.NavidShokoufeh on 1403-08-01.
@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@class SSSSTPClient;
+@class SSTPClient;
 
 typedef enum : NSUInteger {
     SSTPPPPState_OPEN,
@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
     SSTPPPPState_CLOSE,
 } SSTPPPPState;
 
-@protocol SSSSTPClientDelegate <SSClientDelegate>
+@protocol SSTPClientDelegate <SSClientDelegate>
 
 -(void)tcpClient:(SSTCPClient *)client didChangeSSTPState:(SSTPPPPState)state;
 
@@ -29,7 +29,7 @@ typedef enum : NSUInteger {
 @end
 
 
-@interface SSSSTPClient : SSTCPClient
+@interface SSTPClient : SSTCPClient
 
 -(void)echo;
 

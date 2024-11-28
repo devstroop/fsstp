@@ -17,6 +17,6 @@ FOUNDATION_EXPORT const unsigned char openconnectVersionString[];
 
 #import <openconnect/OpenAdapter.h>
 #import <openconnect/SSTCPClient.h>
-#import <openconnect/SSSSTPClient.h>
+#import <openconnect/SSTPClient.h>
 #import <openconnect/NWRunLoop.h>
 #import <openconnect/lwIP.h>
