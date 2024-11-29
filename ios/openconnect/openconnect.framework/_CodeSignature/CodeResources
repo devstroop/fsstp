@@ -16,7 +16,7 @@
 		<data>
 		E0EpoqFvsWs5P+J2OiimA36B2Zc=
 		</data>
-		<key>Headers/SSTPClient.h</key>
+		<key>Headers/SSSSTPClient.h</key>
 		<data>
 		iiJUCmQx0U2FpIUiR1pPHXUcFO4=
 		</data>
@@ -76,7 +76,7 @@
 			5L6K8PheRk2nfmSDBLcvtfZPBypNW8MeFW03p2nYf2g=
 			</data>
 		</dict>
-		<key>Headers/SSTPClient.h</key>
+		<key>Headers/SSSSTPClient.h</key>
 		<dict>
 			<key>hash</key>
 			<data>

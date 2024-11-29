@@ -7,8 +7,8 @@
 
 #import "FSSTPPlugin.h"
 #import <ExtParser/ExtParser.h>
-#import "CheckConnectData.h"
 #import "NodeModel.h"
+#import "CheckConnectData.h"
 #import <sys/sysctl.h>
 #import <net/if.h>
 #import <ifaddrs.h>
