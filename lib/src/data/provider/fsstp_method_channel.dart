@@ -105,8 +105,7 @@ class MethodChannelFSSTP {
         "verifySSLCert": server.softEtherConfiguration?.verifySSLCert,
         "useTrustedCert": server.softEtherConfiguration?.useTrustedCert,
         "sslVersion": server.softEtherConfiguration?.sslVersion,
-        "showDisconnectOnNotification":
-            server.softEtherConfiguration?.showDisconnectOnNotification,
+        "showDisconnectOnNotification": server.softEtherConfiguration?.showDisconnectOnNotification,
         "notificationText": server.softEtherConfiguration?.notificationText,
         "enableCHAP": server.sstpConfiguration?.enableCHAP,
         "enablePAP": server.sstpConfiguration?.enablePAP,
