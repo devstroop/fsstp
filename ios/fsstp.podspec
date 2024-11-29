@@ -5,7 +5,7 @@
 Pod::Spec.new do |s|
   s.name             = 'fsstp'
   s.version          = '1.0.0'
-  s.summary          = 'SSTP client for flutter on ios platform'
+  s.summary          = 'SSTP/SoftEther client for flutter on ios platform'
   s.description      = <<-DESC
   SSTP/SoftEther client for flutter on ios platform
                        DESC
