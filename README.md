@@ -54,7 +54,7 @@ $(SRCROOT)/.symlinks/plugins/fsstp/ios/openconnect
 
 ### <b>5. Copy Paste</b>
 
-Open sstp_extension > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/devstroop/fsstp/refs/heads/main/example/ios/sstp_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
+Open Target (Network Extensions) > PacketTunnelProvider.m and copy paste this script <a href="https://raw.githubusercontent.com/devstroop/fsstp/refs/heads/main/example/ios/sstp_extension/PacketTunnelProvider.m">PacketTunnelProvider.m</a>
 
 
 ## Example
