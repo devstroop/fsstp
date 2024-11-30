@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*.{m,h}'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '13.0'
+  s.platform = :ios, '12.0'
   s.libraries = 'resolv'
   
   s.preserve_path = ['ext/ExtParser.framework','openconnect/openconnect.framework']

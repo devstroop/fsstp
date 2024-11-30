@@ -102,7 +102,7 @@ class _MyAppState extends State<MyApp> {
                             enableMSCHAP2: true,
                             enableCHAP: false,
                             enablePAP: false,
-                            enableTLS: false,
+                            enableTLS: true,
                           ),
                         );
 
