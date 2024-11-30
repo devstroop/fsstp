@@ -1,10 +1,3 @@
-//
-//  FSSTPPlugin.m
-//
-//  Created by NavidShokoufeh on 1403-08-01.
-//
-
-
 #import "FSSTPPlugin.h"
 #import <ExtParser/ExtParser.h>
 #import "NodeModel.h"
@@ -31,24 +24,19 @@
     instance->_iOSToFlutterChannel = [FlutterMethodChannel
                                        methodChannelWithName:@"responseReceiver"
                                        binaryMessenger:[registrar messenger]];
-    
     FlutterMethodChannel* channel = [FlutterMethodChannel
       methodChannelWithName:@"fsstp"
             binaryMessenger:[registrar messenger]];
-  
   [registrar addMethodCallDelegate:instance channel:channel];
-    
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
   } else if([@"connect" isEqualToString:call.method]){
-      
       [[PDVPNManager sharedManager] connectUsing:[CheckConnectData checkConnectParmer:self.modal]];
       result(@(YES));
   }else if([@"disconnect" isEqualToString:call.method]){
-      
       [[PDVPNManager sharedManager] disconnect];
       result(@(YES));
   }else if([@"takePermission" isEqualToString:call.method]){
@@ -56,12 +44,14 @@
           [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(vpnConnectionStatusDidChange) name:@"kApplicationVPNStatusDidChangeNotification" object:nil];
           self.isObserverAdded = YES;
       }
-      
       [[PDVPNManager sharedManager] setupVPNManager];
-
       result(@(YES));
   }else if([@"saveServer" isEqualToString:call.method]){
-      
+      NSLog(@"hostName: %@", call.arguments[@"hostName"]);
+      NSLog(@"sslPort: %@", call.arguments[@"sslPort"]);
+      NSLog(@"userName: %@", call.arguments[@"userName"]);
+      NSLog(@"password: %@", call.arguments[@"password"]);
+
       self.modal = [[NodeModel alloc] init];
       self.modal.nodeName = @"SSTP";
       self.modal.TLS = [call.arguments[@"enableTLS"] boolValue];
@@ -76,8 +66,6 @@
       result(@(YES));
   }else if([@"checkLastConnectionStatus" isEqualToString:call.method]){
       NSInteger lastConnectionStatus = [[NSUserDefaults standardUserDefaults] integerForKey:@"lastConnectionStatus"];
-      
-      
       if(lastConnectionStatus == YDVPNStatusConnected){
           result(@"Connected");
       }else if(lastConnectionStatus == YDVPNStatusConnecting){
@@ -95,9 +83,7 @@
     if(connectionStatus == PDVPNManager.sharedManager.status){
         return;
     }
-    
     connectionStatus = PDVPNManager.sharedManager.status;
-    
     if (PDVPNManager.sharedManager.status == YDVPNStatusConnected) {
         NSLog(@"Connected");
         NSDictionary *data = @{@"status": @"Connected"};
@@ -112,7 +98,6 @@
         NSDictionary *data = @{@"status": @"Disconnected"};
         [self sendMessageToFlutter:data];
     }
-    
     
     [[NSUserDefaults standardUserDefaults] setObject:@(PDVPNManager.sharedManager.status) forKey:@"lastConnectionStatus"];
     [[NSUserDefaults standardUserDefaults] synchronize];

@@ -96,6 +96,8 @@ class MethodChannelFSSTP {
 
   Future saveServerData({required VPNServer server}) async {
     try {
+      debugPrint(
+          "Saving server data: host=${server.host}, port=${server.port}, username=${server.username}");
       var res = await methodChannelCaller.invokeMethod("saveServer", {
         "hostName": server.host,
         "sslPort": server.port,
@@ -105,7 +107,8 @@ class MethodChannelFSSTP {
         "verifySSLCert": server.softEtherConfiguration?.verifySSLCert,
         "useTrustedCert": server.softEtherConfiguration?.useTrustedCert,
         "sslVersion": server.softEtherConfiguration?.sslVersion,
-        "showDisconnectOnNotification": server.softEtherConfiguration?.showDisconnectOnNotification,
+        "showDisconnectOnNotification":
+            server.softEtherConfiguration?.showDisconnectOnNotification,
         "notificationText": server.softEtherConfiguration?.notificationText,
         "enableCHAP": server.sstpConfiguration?.enableCHAP,
         "enablePAP": server.sstpConfiguration?.enablePAP,
@@ -130,8 +133,7 @@ class MethodChannelFSSTP {
     return caller;
   }
 
-  static final MethodChannelFSSTP _instance =
-      MethodChannelFSSTP.internal();
+  static final MethodChannelFSSTP _instance = MethodChannelFSSTP.internal();
   factory MethodChannelFSSTP() => _instance;
   MethodChannelFSSTP.internal();
 }
